@@ -6,24 +6,7 @@
 #include <cstdlib>
 #include <algorithm>
 #include "include/userio.h"
-
-struct Citation
-{
-	Citation(std::string json)
-	{
-
-	}
-
-	std::string Authors;
-	std::string Title;
-	std::string Journal;
-	std::string Year;
-	std::string Description;
-	std::vector<std::string> Tags;
-
-	std::string Bibtex;
-	std::string Citation_Name;
-};
+#include "include/Citation.h"
 
 void load_data(std::vector<Citation>& list)
 {
