@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "../include/json.hpp"
 
 struct Citation
 {
