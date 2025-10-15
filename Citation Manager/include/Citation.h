@@ -4,9 +4,11 @@
 #include <vector>
 #include "../include/json.hpp"
 
+using json = nlohmann::json;
+
 struct Citation
 {
-	Citation(const std::string& json);
+	Citation(const std::string& source);
 	void display_snapshot();
 	void display_information();
 

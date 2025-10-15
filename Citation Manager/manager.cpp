@@ -7,10 +7,21 @@
 #include <algorithm>
 #include "include/userio.h"
 #include "include/Citation.h"
+#include "include/citation_handler.h"
 
 void load_data(std::vector<Citation>& list)
 {
+	std::ifstream file("citation_data.json");
+	nlohmann::json citations;
+	file >> citations;
 
+	if (citations.is_array())
+	{
+		for (auto& element : citations)
+		{
+			list.push_back(Citation(element.dump()));
+		}
+	}
 }
 
 bool is_json_real()
@@ -36,7 +47,8 @@ int main(int argc, char* argv[])
 		switch(input[0])
 		{
 			case '1':
-				// View all citations
+				clear_screen();
+				view_citations(citation_list);
 				break;
 			case '2':
 				// Search citations

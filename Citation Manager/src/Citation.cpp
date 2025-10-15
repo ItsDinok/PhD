@@ -12,12 +12,12 @@
 	Citation_Name
 */
 
-Citation::Citation(const std::string& json)
+Citation::Citation(const std::string& source)
 {
 	// TODO: consider using a json parser for this
 	// The opening bracket is not included
 	
-	json j = json::parse(data);
+	json j = json::parse(source);
 
 	// Check to see which fields are populated
 	if (j.contains("Title")) Title =		j["Title"];
@@ -39,7 +39,7 @@ std::string join_vector(const std::vector<std::string>& vec)
 		to_return += vec[i] + ", ";
 	}
 
-	return to_return
+	return to_return;
 }
 
 void Citation::display_snapshot()
